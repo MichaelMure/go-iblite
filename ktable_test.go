@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestSerial(t *testing.T) {
+func TestKSerial(t *testing.T) {
 	table1 := NewKTable(100, 4)
 	for i := uint64(0); i < 200_000; i++ {
 		table1.Insert(i)
@@ -35,7 +35,7 @@ func TestSerial(t *testing.T) {
 	require.True(t, fromReader.Equals(table1))
 }
 
-func BenchmarkSerial(b *testing.B) {
+func BenchmarkKSerial(b *testing.B) {
 	table1 := NewKTable(100, 4)
 	for i := uint64(0); i < 200_000; i++ {
 		table1.Insert(i)
@@ -73,7 +73,7 @@ func BenchmarkSerial(b *testing.B) {
 	})
 }
 
-func TestCopy(t *testing.T) {
+func TestKCopy(t *testing.T) {
 	table1 := NewKTable(100, 4)
 	for i := uint64(0); i < 200_000; i++ {
 		table1.Insert(i)
@@ -82,7 +82,7 @@ func TestCopy(t *testing.T) {
 	require.True(t, table1.Equals(table2))
 }
 
-func TestEquals(t *testing.T) {
+func TestKEquals(t *testing.T) {
 	table1 := NewKTable(100, 4)
 	for i := uint64(0); i < 200_000; i++ {
 		table1.Insert(i)
@@ -112,7 +112,7 @@ func TestEquals(t *testing.T) {
 	require.False(t, table1.Equals(table5))
 }
 
-func TestInsertDelete(t *testing.T) {
+func TestKInsertDelete(t *testing.T) {
 	const count = 1000
 
 	table := NewKTable(100, 4)
@@ -128,7 +128,17 @@ func TestInsertDelete(t *testing.T) {
 	require.True(t, table.Empty())
 }
 
-func TestEmpty(t *testing.T) {
+func BenchmarkInsert(b *testing.B) {
+	table := NewKTable(100, 4)
+	b.ResetTimer()
+	b.ReportAllocs()
+
+	for i := 0; i < b.N; i++ {
+		table.Insert(uint64(i))
+	}
+}
+
+func TestKEmpty(t *testing.T) {
 	table := NewKTable(100, 4)
 	require.True(t, table.Empty())
 
@@ -138,7 +148,7 @@ func TestEmpty(t *testing.T) {
 	require.True(t, table.Empty())
 }
 
-func TestPeel(t *testing.T) {
+func TestKPeel(t *testing.T) {
 	const inserts = 25 // low enough to be able to peel
 
 	table := NewKTable(100, 4)
@@ -153,7 +163,7 @@ func TestPeel(t *testing.T) {
 	require.True(t, table.Empty())
 }
 
-func TestSetReconciliation(t *testing.T) {
+func TestKSetReconciliation(t *testing.T) {
 	table1 := NewKTable(100, 4)
 	for i := uint64(0); i < 200_000; i++ {
 		table1.Insert(i)

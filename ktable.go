@@ -7,20 +7,25 @@ import (
 	"iter"
 )
 
-// K,V could be []byte
-
-type kBucket struct {
-	idSum   uint64
-	hashSum uint64
-	count   int64
-}
-
+// KTable is an Invertible Bloom Lookup Table, which only holds keys, not values.
+// It's a probabilistic concise data structure for set representation that supports a peeling operation as the recovery of the elements in the represented set.
+// It can be used in particular for set reconciliation, see the example.
 // KTable is NOT thread safe.
 type KTable struct {
 	buckets   []kBucket
-	hashCount int
+	hashCount int // number of hashes applied to each key
 }
 
+type kBucket struct {
+	idSum   uint64 // bitwise XOR of all keys in the bucket
+	hashSum uint64 // bitwise XOR of all hashes of keys in the bucket
+	count   int64  // number of elements in the bucket
+}
+
+// NewKTable creates a new key-only IBLT with the given parameters.
+// The hashCount parameter is the number of hashes applied to each key.
+// The bucketCount parameter is the number of buckets.
+// Those parameters directly affect the memory usage of the IBLT, as well as the probability to succeed in a peeling operation.
 func NewKTable(bucketCount, hashCount int) *KTable {
 	return &KTable{
 		buckets:   make([]kBucket, bucketCount),
@@ -73,6 +78,7 @@ func FromReader(r io.Reader) (*KTable, error) {
 	return res, nil
 }
 
+// ToBytes returns the serialized representation of the key-only IBLT.
 func (t *KTable) ToBytes() []byte {
 	data := make([]byte, 0, 2+2+len(t.buckets)*3*8)
 	data = binary.BigEndian.AppendUint16(data, uint16(t.hashCount))
@@ -85,6 +91,7 @@ func (t *KTable) ToBytes() []byte {
 	return data
 }
 
+// ToWriter serializes the IBLT to the given writer.
 func (t *KTable) ToWriter(w io.Writer) error {
 	var header [4]byte
 	binary.BigEndian.PutUint16(header[0:2], uint16(t.hashCount))

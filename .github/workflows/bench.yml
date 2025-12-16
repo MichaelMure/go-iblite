@@ -1,4 +1,4 @@
-name: go continuous benchmark
+name: Continuous benchmark
 on:
   push:
     branches:
