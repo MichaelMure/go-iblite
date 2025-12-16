@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1765908619957,
+  "lastUpdate": 1765921423463,
   "repoUrl": "https://github.com/MichaelMure/go-iblite",
   "entries": {
     "Go Benchmark": [
@@ -1224,6 +1224,366 @@ window.BENCHMARK_DATA = {
             "value": 59,
             "unit": "allocs/op",
             "extra": "209997 times\n2 procs"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "batolettre@gmail.com",
+            "name": "Michael Muré",
+            "username": "MichaelMure"
+          },
+          "committer": {
+            "email": "batolettre@gmail.com",
+            "name": "Michael Muré",
+            "username": "MichaelMure"
+          },
+          "distinct": true,
+          "id": "1ad7901d8ea398fe3775e3ad013b1bd1c403a69a",
+          "message": "formatting",
+          "timestamp": "2025-12-16T22:42:46+01:00",
+          "tree_id": "15b9f6676b42932593e58eb05cc5b8b7c1deaca2",
+          "url": "https://github.com/MichaelMure/go-iblite/commit/1ad7901d8ea398fe3775e3ad013b1bd1c403a69a"
+        },
+        "date": 1765921423188,
+        "tool": "go",
+        "benches": [
+          {
+            "name": "BenchmarkKSerial/ToBytes",
+            "value": 592.8,
+            "unit": "ns/op\t    2688 B/op\t       1 allocs/op",
+            "extra": "2030106 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKSerial/ToBytes - ns/op",
+            "value": 592.8,
+            "unit": "ns/op",
+            "extra": "2030106 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKSerial/ToBytes - B/op",
+            "value": 2688,
+            "unit": "B/op",
+            "extra": "2030106 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKSerial/ToBytes - allocs/op",
+            "value": 1,
+            "unit": "allocs/op",
+            "extra": "2030106 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKSerial/FromBytes",
+            "value": 662.1,
+            "unit": "ns/op\t    2720 B/op\t       2 allocs/op",
+            "extra": "1811688 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKSerial/FromBytes - ns/op",
+            "value": 662.1,
+            "unit": "ns/op",
+            "extra": "1811688 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKSerial/FromBytes - B/op",
+            "value": 2720,
+            "unit": "B/op",
+            "extra": "1811688 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKSerial/FromBytes - allocs/op",
+            "value": 2,
+            "unit": "allocs/op",
+            "extra": "1811688 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKSerial/ToWriter",
+            "value": 324.4,
+            "unit": "ns/op\t      28 B/op\t       2 allocs/op",
+            "extra": "3677263 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKSerial/ToWriter - ns/op",
+            "value": 324.4,
+            "unit": "ns/op",
+            "extra": "3677263 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKSerial/ToWriter - B/op",
+            "value": 28,
+            "unit": "B/op",
+            "extra": "3677263 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKSerial/ToWriter - allocs/op",
+            "value": 2,
+            "unit": "allocs/op",
+            "extra": "3677263 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKSerial/FromReader",
+            "value": 1579,
+            "unit": "ns/op\t    2796 B/op\t       5 allocs/op",
+            "extra": "788287 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKSerial/FromReader - ns/op",
+            "value": 1579,
+            "unit": "ns/op",
+            "extra": "788287 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKSerial/FromReader - B/op",
+            "value": 2796,
+            "unit": "B/op",
+            "extra": "788287 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKSerial/FromReader - allocs/op",
+            "value": 5,
+            "unit": "allocs/op",
+            "extra": "788287 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKInsert",
+            "value": 70.82,
+            "unit": "ns/op\t      56 B/op\t       2 allocs/op",
+            "extra": "16141346 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKInsert - ns/op",
+            "value": 70.82,
+            "unit": "ns/op",
+            "extra": "16141346 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKInsert - B/op",
+            "value": 56,
+            "unit": "B/op",
+            "extra": "16141346 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKInsert - allocs/op",
+            "value": 2,
+            "unit": "allocs/op",
+            "extra": "16141346 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKDelete",
+            "value": 70.6,
+            "unit": "ns/op\t      56 B/op\t       2 allocs/op",
+            "extra": "16896902 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKDelete - ns/op",
+            "value": 70.6,
+            "unit": "ns/op",
+            "extra": "16896902 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKDelete - B/op",
+            "value": 56,
+            "unit": "B/op",
+            "extra": "16896902 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKDelete - allocs/op",
+            "value": 2,
+            "unit": "allocs/op",
+            "extra": "16896902 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKPeel",
+            "value": 4564,
+            "unit": "ns/op\t    3352 B/op\t      59 allocs/op",
+            "extra": "248680 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKPeel - ns/op",
+            "value": 4564,
+            "unit": "ns/op",
+            "extra": "248680 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKPeel - B/op",
+            "value": 3352,
+            "unit": "B/op",
+            "extra": "248680 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKPeel - allocs/op",
+            "value": 59,
+            "unit": "allocs/op",
+            "extra": "248680 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVSerial/ToBytes",
+            "value": 960.7,
+            "unit": "ns/op\t    3456 B/op\t       1 allocs/op",
+            "extra": "1241680 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVSerial/ToBytes - ns/op",
+            "value": 960.7,
+            "unit": "ns/op",
+            "extra": "1241680 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVSerial/ToBytes - B/op",
+            "value": 3456,
+            "unit": "B/op",
+            "extra": "1241680 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVSerial/ToBytes - allocs/op",
+            "value": 1,
+            "unit": "allocs/op",
+            "extra": "1241680 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVSerial/FromBytes",
+            "value": 4826,
+            "unit": "ns/op\t    8112 B/op\t     202 allocs/op",
+            "extra": "241324 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVSerial/FromBytes - ns/op",
+            "value": 4826,
+            "unit": "ns/op",
+            "extra": "241324 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVSerial/FromBytes - B/op",
+            "value": 8112,
+            "unit": "B/op",
+            "extra": "241324 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVSerial/FromBytes - allocs/op",
+            "value": 202,
+            "unit": "allocs/op",
+            "extra": "241324 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVSerial/ToWriter",
+            "value": 546.3,
+            "unit": "ns/op\t      32 B/op\t       2 allocs/op",
+            "extra": "2195144 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVSerial/ToWriter - ns/op",
+            "value": 546.3,
+            "unit": "ns/op",
+            "extra": "2195144 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVSerial/ToWriter - B/op",
+            "value": 32,
+            "unit": "B/op",
+            "extra": "2195144 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVSerial/ToWriter - allocs/op",
+            "value": 2,
+            "unit": "allocs/op",
+            "extra": "2195144 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVSerial/FromReader",
+            "value": 6205,
+            "unit": "ns/op\t    8184 B/op\t     205 allocs/op",
+            "extra": "191476 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVSerial/FromReader - ns/op",
+            "value": 6205,
+            "unit": "ns/op",
+            "extra": "191476 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVSerial/FromReader - B/op",
+            "value": 8184,
+            "unit": "B/op",
+            "extra": "191476 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVSerial/FromReader - allocs/op",
+            "value": 205,
+            "unit": "allocs/op",
+            "extra": "191476 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVInsert",
+            "value": 141.3,
+            "unit": "ns/op\t      72 B/op\t       2 allocs/op",
+            "extra": "8499069 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVInsert - ns/op",
+            "value": 141.3,
+            "unit": "ns/op",
+            "extra": "8499069 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVInsert - B/op",
+            "value": 72,
+            "unit": "B/op",
+            "extra": "8499069 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVInsert - allocs/op",
+            "value": 2,
+            "unit": "allocs/op",
+            "extra": "8499069 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVDelete",
+            "value": 139.8,
+            "unit": "ns/op\t      72 B/op\t       2 allocs/op",
+            "extra": "8599666 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVDelete - ns/op",
+            "value": 139.8,
+            "unit": "ns/op",
+            "extra": "8599666 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVDelete - B/op",
+            "value": 72,
+            "unit": "B/op",
+            "extra": "8599666 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVDelete - allocs/op",
+            "value": 2,
+            "unit": "allocs/op",
+            "extra": "8599666 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVPeel",
+            "value": 4748,
+            "unit": "ns/op\t    3352 B/op\t      59 allocs/op",
+            "extra": "251571 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVPeel - ns/op",
+            "value": 4748,
+            "unit": "ns/op",
+            "extra": "251571 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVPeel - B/op",
+            "value": 3352,
+            "unit": "B/op",
+            "extra": "251571 times\n4 procs"
+          },
+          {
+            "name": "BenchmarkKVPeel - allocs/op",
+            "value": 59,
+            "unit": "allocs/op",
+            "extra": "251571 times\n4 procs"
           }
         ]
       }
