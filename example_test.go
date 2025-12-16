@@ -41,6 +41,7 @@ func Example() {
 	// Now the magic trick: Alice subtracts the received IBLT from her own, and peel (decode) the missing keys.
 	alice.Subtract(received)
 
+	fmt.Println()
 	fmt.Println("Keys that Alice doesn't have:")
 	for key := range alice.Copy().PeelMisses() {
 		fmt.Println(key)
@@ -54,6 +55,7 @@ func Example() {
 	// Output:
 	// 10 million keys: 80000000 bytes
 	// IBLT size: 484 bytes
+	//
 	// Keys that Alice doesn't have:
 	// 10000003
 	// 10000004
