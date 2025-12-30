@@ -50,12 +50,12 @@ alice := iblt.NewKTable(20, 4)
 bob := iblt.NewKTable(20, 4)
 
 // Each inserts the keys they have into their respective IBLT.
-// Here, we insert 10 million keys, far, far more than the IBLT can hold without saturating.
+// Here, we insert 1 million keys, far, far more than the IBLT can hold without saturating.
 // Bob will have some keys missing and some extra keys compared to Alice.
-for i := uint64(0); i < 10_000_000; i++ {
+for i := uint64(0); i < 1_000_000; i++ {
     alice.Insert(i)
 }
-for i := uint64(5); i < 10_000_005; i++ {
+for i := uint64(5); i < 1_000_005; i++ {
     bob.Insert(i)
 }
 
@@ -67,7 +67,7 @@ if err != nil {
 }
 
 // Just to illustrate, we'll print the size of a million keys, and the size of the IBLT.
-fmt.Printf("10 million keys: %d bytes\n", 10_000_000*8)
+fmt.Printf("1 million keys: %d bytes\n", 1_000_000*8)
 fmt.Printf("IBLT size: %d bytes\n", len(bobBytes))
 
 // Now the magic trick:
@@ -76,30 +76,38 @@ alice.Subtract(received)
 
 fmt.Println()
 fmt.Println("Keys that Alice doesn't have:")
-for key := range alice.Copy().PeelMisses() {
-    fmt.Println(key)
+misses := alice.Copy()
+for key := range misses.PeelMisses() {
+fmt.Println(key)
 }
+fmt.Println("Peeling completed:", misses.Empty())
 fmt.Println()
 fmt.Println("Keys that Bob doesn't have:")
+has := bob.Copy()
 for key := range alice.Copy().PeelHas() {
-    fmt.Println(key)
+fmt.Println(key)
 }
+fmt.Println("Peeling completed:", has.Empty())
 
 // Output:
-// 10 million keys: 80000000 bytes
+// 1 million keys: 8000000 bytes
 // IBLT size: 484 bytes
 //
 // Keys that Alice doesn't have:
-// 10000003
-// 10000004
-// 10000002
-// 10000001
+// 1000000
+// 1000004
+// 1000003
+// 1000002
+// 1000001
+// Peeling completed: true
 //
 // Keys that Bob doesn't have:
+// 3
 // 0
+// 4
 // 1
 // 2
-// 4
+// Peeling completed: false
 ```
 
 ## License
